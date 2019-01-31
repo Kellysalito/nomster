@@ -6,4 +6,6 @@
 </div>
 
 <% end %>  
-<%= will_paginate @places %>
+<div>
+  <%= will_paginate @places, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
