@@ -4,14 +4,14 @@
 <br /><br />
 <p><%= @place.description %></p>
 
-
+<% if @place.latitude.present? && @place.longitude.present? %>
     
   <script>
 
     function initMap() {
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 12,
         center: myLatLng
       });
 
@@ -30,6 +30,9 @@
 
   <div id="map"></div>
 
+  <% end %>
+  
+  <br />
 
 <div class="float-right">
   <% if current_user && current_user == @place.user %>
