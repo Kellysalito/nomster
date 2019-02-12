@@ -2,7 +2,7 @@
 <div class="booyah-box col-10 offset-1">
   <h1><%= link_to place.name, place_path(place) %></h1><br />
   <i><%= place.address %></i><br /><br />
-  <p><%= place. description %></p><br />
+  <p><%= place.description %></p><br />
 
   <% if place.user.present? %>
   <small><%= place.user.email %></small>
@@ -19,6 +19,16 @@
     </blockquote>
   </div>
   <% end %>
+  
+<% if place.photos.present? %>
+  <div class="col-12">
+  <% place.photos.each do |photo| %>
+  <%= image_tag photo.picture.url %>
+  <%= photo.caption %>
+  </div>
+<% end %>
+
+<% end %>
 
 </div>
 
