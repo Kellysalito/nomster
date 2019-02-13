@@ -22,17 +22,16 @@
   
 <% if place.photos.present? %>
   <div class="col-12">
-  <% place.photos.each do |photo| %>
+    <blockquote>
+  <%=place.photo.last.caption %>
+  <small><%=place.photo.last.user.email %></small>
   <%= image_tag photo.picture.url %>
-  <%= photo.caption %>
+    </blockquote>
   </div>
 <% end %>
-
-<% end %>
-
 </div>
-
 <% end %>  
+
 <div>
   <%= will_paginate @places, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>
