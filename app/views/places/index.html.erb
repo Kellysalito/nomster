@@ -20,7 +20,7 @@
   </div>
   <% end %>
   
-<% if place.photos.present? %>
+ <% if place.photos.present? %>
   <div class="col-12">
     <blockquote>
   <%=place.photo.last.caption %>
@@ -30,7 +30,8 @@
   </div>
 <% end %>
 </div>
-<% end %>  
+<% end %>
+
 
 <div>
   <%= will_paginate @places, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

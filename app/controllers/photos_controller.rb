@@ -5,13 +5,10 @@ class PhotosController < ApplicationController
    end
 
  def create
-  @photo = Photo.new(photo_params)
-  if @photo.save
-    flash[:notice] = "Picture Uploaded"
-    redirect_to place_photos_path
-  else
-    render 'new'
-  end
+  @place = Place.find(params[:place_id])
+  @place.photos.create(photo_params.merge(user: current_user))
+  redirect_to place_path(@place)
+
 end
 
 
