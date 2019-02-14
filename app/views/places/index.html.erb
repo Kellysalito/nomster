@@ -3,10 +3,11 @@
   <h1><%= link_to place.name, place_path(place) %></h1><br />
   <i><%= place.address %></i><br /><br />
   <p><%= place.description %></p><br />
-
+  </div>
   <% if place.user.present? %>
   <small><%= place.user.email %></small>
   <% end %>
+
 
   <%if place.comments.present? %>
   <div class="col-12">
@@ -20,18 +21,17 @@
   </div>
   <% end %>
   
- <% if place.photos.present? %>
+ <%if place.photos.present? %>
   <div class="col-12">
     <blockquote>
-  <%=place.photo.last.caption %>
-  <small><%=place.photo.last.user.email %></small>
-  <%= image_tag photo.picture.url %>
-    </blockquote>
+  <% if place.photos.last.caption.present? %>
+  <b><%= place.photos.last.caption %></b> -
+  <% end %>
+  <%= place.photos.last.picture %>
+  <small><%= place.photos.last.picture_url %></small>
+  </blockquote>
   </div>
 <% end %>
-</div>
-<% end %>
-
 
 <div>
   <%= will_paginate @places, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
