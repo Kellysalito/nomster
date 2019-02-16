@@ -13,13 +13,6 @@ class PhotosController < ApplicationController
 end
 
 
-  def index
-  @photos= Photo.all
-  end
-
-  def show
-  end
-
   private
   def photo_params
   params.require(:photo).permit(:picture, :caption)
