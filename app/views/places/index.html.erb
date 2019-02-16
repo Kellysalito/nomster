@@ -22,19 +22,23 @@
   </div>
   <% end %>
   
+  <div class= "place_photos"
  <%if place.photos.present? %>
   <div class="col-12">
   <blockquote>
   <% if place.photos.last.caption.present? %>
   <b><%= place.photos.last.caption %></b> -
   <% end %>
+  <br /><br/>
   <small><%=image_tag place.photos.last.picture.url %></small>
   <%= place.photos.last.picture %>
 </blockquote>
   </div>
+
 <% end %>
 </div>
 <% end %>
+</div>
 
 <div>
   <%= will_paginate @places, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
