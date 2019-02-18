@@ -24,7 +24,7 @@
   
    <div class='col col-sm-12 place_photos'>
    <blockquote>
-     <% if place.photos.last.caption.present? %>
+     <% if place.photos.last.present? %>
         <%= place.photos.last.caption %>
       <% end %>
       </blockquote>
