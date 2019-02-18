@@ -26,13 +26,14 @@
    <blockquote>
      <% if place.photos.last.present? %>
         <%= place.photos.last.caption %>
-      <% end %>
+  
       </blockquote>
     <div class='col col-sm-6'>
       <%= image_tag place.photos.last.picture.url %>
     </div>
     <div class='col col-sm-6'>
       <a href="<%= place.photos.last.picture %>">Full Size Image</a>
+     <% end %>
     </div>
   </div>
 <% end %>
