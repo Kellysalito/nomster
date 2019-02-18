@@ -10,8 +10,12 @@
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   margin-top: 10px;
-  margin-bottom: 15px;
-  padding: 20px;
+  margin-bottom: 20px;
+  padding: 35px;
+}
+.float-right{
+  margin-bottom: 20px;
+  margin-top: -5px;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -52,6 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
+  overflow-wrap: break-word;
 }
 
 blockquote:before {
