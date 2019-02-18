@@ -23,11 +23,11 @@
   <% end %>
   
    <div class='col col-sm-12 place_photos'>
-    <blockquote>
-      <% if place.photos.last.caption.present? %>
+   <blockquote>
+     <% if place.photos.last.caption.present? %>
         <%= place.photos.last.caption %>
       <% end %>
-    </blockquote>
+      </blockquote>
     <div class='col col-sm-6'>
       <%= image_tag place.photos.last.picture.url %>
     </div>
