@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-  get 'password_resets/edit'
   devise_for :users
    root 'places#index' # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
    resources :places do
@@ -8,4 +6,5 @@ Rails.application.routes.draw do
     resources :photos, only: :create
      end
      resources :users, only: :show
+    
    end
